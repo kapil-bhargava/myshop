@@ -7,6 +7,10 @@ import PublicLayout from "./layouts/PublicLayout";
 
 // Pages
 import Home from "./pages/Home";
+import AdminLayout from "./layouts/AdminLayout";
+import Dashboard from "./pages/admin/Dashboard";
+import CategoryAdmin from "./pages/admin/CategoryAdmin";
+import ProductAdmin from "./pages/admin/ProductAdmin";
 
 // Optional Pages (create later if needed)
 // import About from "./pages/About";
@@ -17,12 +21,16 @@ const AppRoutes = () => {
         <BrowserRouter>
             <Routes>
 
-                {/* Admin Routes (optional) */}
-                {/*
-        <Route path="/admin" element={<AdminLayout />}>
-          <Route path="dashboard" element={<Dashboard />} />
-        </Route>
-        */}
+                Admin Routes (optional)
+
+                <Route path="/admin" element={<AdminLayout />}>
+                    <Route path="dashboard" element={<Dashboard/>} />
+                    <Route path="categories" element={<CategoryAdmin />} />
+                    <Route path="products" element={<ProductAdmin />} />
+                    <Route path="*" element={<h1>Not found</h1>} />
+
+                </Route>
+
 
                 {/* Public Routes */}
                 <Route element={<PublicLayout />}>
